@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Meme Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎭 Custom Meme Generator</h1>
+            <p>Create hilarious memes in real-time with AI-powered suggestions!</p>
+        </div>
+
+        <div class="main-content">
+            <div class="controls-panel">
+                <!-- Template Selection -->
+                <div class="section">
+                    <h3>📋 Choose Template</h3>
+                    <div class="templates-grid" id="templatesGrid">
+                        <!-- Templates will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Custom Upload -->
+                <div class="section">
+                    <h3>📤 Upload Custom Image</h3>
+                    <div class="upload-area" id="uploadArea">
+                        <div>
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17,8 12,3 7,8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <p>Drop image here or click to upload</p>
+                        </div>
+                    </div>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                </div>
+
+                <!-- Text Input -->
+                <div class="section">
+                    <h3>✏️ Add Text</h3>
+                    <div class="controls">
+                        <div class="text-controls">
+                            <div class="text-input-group">
+                                <input type="text" id="textInput" placeholder="Enter text for meme">
+                                <button id="addTextBtn" class="btn">Add Text</button>
+                            </div>
+                            <div class="text-elements-list" id="textElementsList">
+                                <!-- Text elements will be listed here -->
+                            </div>
+                        </div>
+                        <div class="style-controls">
+                            <div class="control-group">
+                                <label for="fontSelect">Font:</label>
+                                <select id="fontSelect">
+                                    <option value="Impact">Impact</option>
+                                    <option value="Arial">Arial</option>
+                                    <option value="Comic Sans MS">Comic Sans MS</option>
+                                    <option value="Verdana">Verdana</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Size: <span id="sizeValue">36</span>px</label>
+                                <input type="range" class="range-input" id="fontSize" min="20" max="80" value="36">
+                            </div>
+                            <div class="control-group">
+                                <label>Text Color</label>
+                                <input type="color" class="color-input" id="textColor" value="#ffffff">
+                            </div>
+                            <div class="control-group">
+                                <label>Stroke Color</label>
+                                <input type="color" class="color-input" id="strokeColor" value="#000000">
+                            </div>
+                            <div class="control-group">
+                                <label>Stroke Width: <span id="strokeValue">2</span>px</label>
+                                <input type="range" class="range-input" id="strokeWidth" min="0" max="10" value="2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Suggestions -->
+                <div class="section ai-section">
+                    <h3>🤖 AI Caption Suggestions</h3>
+                    <button class="ai-btn" id="generateSuggestions">
+                        <span>✨</span>
+                        <span>Generate AI Suggestions</span>
+                    </button>
+                    <div class="suggestions" id="suggestionsContainer" style="display: none;">
+                        <!-- AI suggestions will appear here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <div class="canvas-container">
+                    <canvas id="memeCanvas" width="500" height="500"></canvas>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="downloadBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Meme
+                    </button>
+                    <button class="btn btn-secondary" id="shareBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                        Share Meme
+                    </button>
+                </div>
+                
+                <div id="shareUrl" class="share-url" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
