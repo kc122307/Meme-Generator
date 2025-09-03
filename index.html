@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎭 Custom Meme Generator</h1>
+            <h1>🎨 Custom Meme Generator</h1>
             <p>Create hilarious memes in real-time with AI-powered suggestions!</p>
         </div>
 
@@ -17,9 +17,21 @@
             <div class="controls-panel">
                 <!-- Template Selection -->
                 <div class="section">
-                    <h3>📋 Choose Template</h3>
+                    <h3>🖼️ Choose Template</h3>
                     <div class="templates-grid" id="templatesGrid">
                         <!-- Templates will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Random Meme Section -->
+                <div class="section">
+                    <h3>🎲 Random Meme of the Moment</h3>
+                    <div class="random-meme-container">
+                        <img id="randomMemeImage" src="" alt="Random Meme" class="random-meme-image">
+                    </div>
+                    <div class="action-buttons-single">
+                        <button class="btn btn-secondary" id="nextMemeBtn">Next Meme</button>
+                        <button class="btn btn-primary" id="downloadRandomMemeBtn">Download Random Meme</button>
                     </div>
                 </div>
 
