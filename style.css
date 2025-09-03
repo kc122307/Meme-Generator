@@ -14,7 +14,7 @@ body {
     width: 100%;
     background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
     color: white;
-    padding: 10px 20px;
+    padding: 5px 20px;
     text-align: center;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     z-index: 2000;
@@ -29,7 +29,7 @@ body {
 .main-content-container {
     display: flex;
     height: 100vh;
-    margin-top: 60px; /* Adjust this to match the header height */
+    margin-top: 45px;
 }
 
 .scrolling-controls {
@@ -40,13 +40,13 @@ body {
 
 .fixed-canvas {
     width: 50%;
-    height: 100vh;
+    height: calc(100vh - 45px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: sticky; 
-    top: 60px; /* New: Make it sticky below the header */
+    top: 45px; 
     background: #fff;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     border-top-left-radius: 20px;
@@ -97,8 +97,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%; 
-    height: 80%; 
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 15px;
 }
 
 #memeCanvas {
@@ -109,9 +110,10 @@ body {
 
 .action-buttons {
     display: flex;
-    flex-direction: row; /* New: Changed to row to make buttons side-by-side */
+    flex-direction: row; 
     gap: 15px;
     padding-left: 20px;
+    margin-bottom: 15px;
 }
 
 .action-buttons-single {
